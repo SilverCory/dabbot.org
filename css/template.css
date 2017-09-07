@@ -3,7 +3,7 @@ body {
   background-color: #000;
 }
 
-logo {
+.logo {
   display: block;
   margin-left: auto; 
   margin-right: auto;
