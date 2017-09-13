@@ -1,7 +1,17 @@
 body {
   padding-top: 20px;
   background-color: #000;
-  color: white;
+  color: darkgray;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #555;
+    color: white;
+    margin-top: 3%;
+    align-self: flex-start;
+    justify-content: center;
+    position: absolute;
 }
 
 .logo {
@@ -21,34 +31,12 @@ body {
 .jumbotron {
   text-align: center;
   background-color: transparent;
+  color: white;
 }
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
-}
-
-.navbar {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7),to(#eee));
-  background-image: -webkit-linear-gradient(top, #f7f7f7 0%,#eee 100%);
-  background-image: -o-linear-gradient(top, #f7f7f7 0%,#eee 100%);
-  background-image: linear-gradient(to bottom, #f7f7f7 0%,#eee 100%);
-  border: 1px solid #e5e5e5;
-}
-
-@media (min-width: 768px) {
-  .navbar-nav {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .navbar-nav .nav-item {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-  }
+  color: white;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -59,5 +47,60 @@ body {
   .footer {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -100%;
+  }
+
+  .row-offcanvas-right.active
+  .sidebar-offcanvas {
+    right: -50%;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -100%;
+  }
+
+  .row-offcanvas-left.active
+  .sidebar-offcanvas {
+    left: -50%;
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%;
   }
 }
