@@ -5,36 +5,75 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-      <Container />
+      <div className="container">
+        <div className="masthead">
+          <Header />
+          <Navbar />
+          <Jumbotron />
+          <Footer />
+        </div>
+      </div>
     );
   }
 }
 
-class Container extends Component {
+class Header extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="masthead">
-          <Navbar />
-          <Jumbotron />
-        </div>
+      <div className="header">
+        <HeaderText text="dab" bold={false} />
+        <HeaderImage />
+        <HeaderText text="Bot" bold={true} />
       </div>
     )
+  }
+}
+
+class HeaderImage extends Component {
+  render() {
+    return (
+      <img className="image" src={require('./logo.png')} alt="dabBot Discord Music Bot Logo" />
+    )
+  }
+}
+
+class HeaderText extends Component {
+  render() {
+    return (
+      <p className="title">
+        <HeaderTextContent text={this.props.text} bold={this.props.bold} />
+      </p>
+    )
+  }
+}
+
+class HeaderTextContent extends Component {
+  render() {
+    if (this.props.bold) {
+      return (
+        <strong>{this.props.text}</strong>
+      )
+    } else {
+      return (
+        this.props.text
+      )
+    }
   }
 }
 
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar nav-expand-md navbar-light bg-light rounded mb-3">
+      <nav className="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav text-md-center nav-justified w-100">
-            <NavbarItem />
-            <NavbarItem />
-            <NavbarItem />
-            <NavbarItem />
-            <NavbarItem />
-            <NavbarItem />
+            <NavbarItem href="#" name="Home" />
+            <NavbarItem href="#" name="Invite" />
+            <NavbarItem href="#" name="Commands" />
+            <NavbarItem href="#" name="Radios" />
+            <NavbarItem href="#" name="Queue" />
+            <NavbarItem href="https://dabbot.org/support" name="Support" />
+            <NavbarItem href="https://patreon.com/dabbot" name="Patreon" />
           </ul>
         </div>
       </nav>
@@ -46,9 +85,7 @@ class NavbarItem extends Component {
   render() {
     return (
       <li className="nav-item">
-        <a className="nav-link" href="#">
-          Home
-        </a>
+        <a className="nav-link" href={this.props.href}>{this.props.name}</a>
       </li>
     )
   }
@@ -57,7 +94,7 @@ class NavbarItem extends Component {
 class Jumbotron extends Component {
   render() {
     return (
-      <div className="jumbotron">
+      <div className="jumbotron jumbotron-fluid">
         <JumbotronHeader />
         <JumbotronLead />
         <JumbotronButton />
@@ -90,6 +127,45 @@ class JumbotronButton extends Component {
       <p>
         <a className="btn btn-lg btn-success" href="https://dabbot.org/invite" role="button">
           Invite dabBot
+        </a>
+      </p>
+    )
+  }
+}
+
+class Footer extends Component {
+  render() {
+    return (
+      <footer>
+        <div className="float-right">
+          <FooterRight />
+        </div>
+        <FooterLeft />
+      </footer>
+    )
+  }
+}
+
+class FooterLeft extends Component {
+  render() {
+    return (
+      <p>
+        &copy; 2017 dabbot.org 
+        &middot;
+        <a href="#">terms</a>
+        &middot;
+        <a href="#">support</a>
+      </p>
+    )
+  }
+}
+
+class FooterRight extends Component {
+  render() {
+    return (
+      <p>
+        <a href="#">
+          Back to top
         </a>
       </p>
     )
