@@ -16,13 +16,13 @@ class Footer extends Component {
 class FooterLeft extends Component {
   render() {
     return (
-      <p>
-        &copy; 2017 dabbot.org
-        &middot;
-        <a href="#">terms</a>
-        &middot;
-        <a href="#">support</a>
-      </p>
+      <ul className="footer-list">
+        <li>&copy; {new Date().getFullYear()} dabbot.org</li>
+        <li>&middot;</li>
+        <li><a href="#">terms</a></li>
+        <li>&middot;</li>
+        <li><a href="#">support</a></li>
+      </ul>
     )
   }
 }
