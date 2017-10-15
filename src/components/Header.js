@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Brand from './Brand'
-import Navbar from './Navbar'
+import Brand from './header/Brand'
+import Navbar from './header/Navbar'
 
 class Header extends Component {
   render() {

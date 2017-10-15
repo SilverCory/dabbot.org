@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-import Header from './components/header/Header'
+import Header from './components/Header'
 import Footer from './components/Footer'
 
-import Home from './routes/home/Home'
+import Home from './routes/Home'
 import Commands from './routes/Commands'
 import Radios from './routes/Radios'
 import Queues from './routes/Queues'

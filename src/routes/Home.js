@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import HomeHeader from './HomeHeader'
-import HomeFeatures from './HomeFeatures'
+import HomeHeader from './home/HomeHeader'
+import HomeFeatures from './home/HomeFeatures'
 
 class Home extends Component {
   render() {
