@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Route, Link, NavLink } from 'react-router-dom'
 
 class NavbarInternalItemLink extends Component {
   render() {
     return (
-      <Link to={this.props.href}>{this.props.name}</Link>
+      <li>
+        <NavLink to={this.props.href} exact activeStyle={{
+          backgroundColor: '#2B2B2B',
+          borderColor: '#2B2B2B',
+          color: 'white',
+        }} >
+          {this.props.name}
+        </NavLink>
+      </li>
     )
   }
 }
@@ -12,7 +20,9 @@ class NavbarInternalItemLink extends Component {
 class NavbarExternalItemLink extends Component {
   render() {
     return (
-      <a href={this.props.href}>{this.props.name}</a>
+      <li>
+        <a href={this.props.href}>{this.props.name}</a>
+      </li>
     )
   }
 }
@@ -30,9 +40,7 @@ class NavbarItemLink extends Component {
 class NavbarItem extends Component {
   render() {
     return (
-      <li className={this.props.active ? "is-active" : ""}>
-        <NavbarItemLink external={this.props.external} name={this.props.name} href={this.props.href} />
-      </li>
+      <NavbarItemLink external={this.props.external} name={this.props.name} href={this.props.href} />
     )
   }
 }
@@ -44,7 +52,7 @@ class Navbar extends Component {
         <nav className="tabs is-boxed is-fullwidth">
           <div className="container">
             <ul>
-              <NavbarItem name="Home" href="/" active={true} />
+              <NavbarItem name="Home" href="/" />
               <NavbarItem external name="Invite" href="https://dabbot.org/invite" />
               <NavbarItem name="Commands" href="/commands" />
               <NavbarItem name="Radios" href="/radios" />
