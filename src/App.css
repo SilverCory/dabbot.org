@@ -55,3 +55,12 @@ hr {
 .footer-em-text {
   color: white;
 }
+
+/* icon styles */
+.icon-youtube-play {
+  color: #FF0000;
+}
+
+.icon-twitch {
+  color: #6441A4;
+}

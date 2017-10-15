@@ -12,6 +12,8 @@ import Queue from './routes/Queue'*/
 
 import './App.css'
 
+const classNames = require('classnames');
+
 class Brand extends Component {
   render() {
     return (
@@ -20,7 +22,7 @@ class Brand extends Component {
           <span className="align-center">
             <h1 className="title is-1 header-text">
               <img className="header-image" src={require("./logo.png")} alt="dabBot Logo" />
-              <span className="header-text-large">BOT</span>
+              <span className="header-text-large"> Bot</span>
             </h1>
           </span>
         </div>
@@ -44,7 +46,7 @@ class Navbar extends Component {
     return (
       <div className="hero-foot">
         <nav className="tabs is-boxed is-fullwidth">
-          <div class="container">
+          <div className="container">
             <ul>
               <NavbarItem name="Home" href="#" active={true} />
               <NavbarItem name="Invite" href="https://dabbot.org/invite" />
@@ -75,7 +77,7 @@ class Header extends Component {
 class HomeHeaderTitle extends Component {
   render() {
     return (
-      <h1 class="title is-2 align-center">DAB BOT</h1>
+      <h1 className="title is-2 align-center">DAB Bot</h1>
     )
   }
 }
@@ -83,8 +85,8 @@ class HomeHeaderTitle extends Component {
 class HomeHeaderCallToAction extends Component {
   render() {
     return (
-      <a class="button is-success is-large">
-        Invite DAB BOT
+      <a className="button is-success is-large">
+        Invite DAB Bot
       </a>
     )
   }
@@ -93,7 +95,7 @@ class HomeHeaderCallToAction extends Component {
 class HomeHeaderSubtitle extends Component {
   render() {
     return (
-      <h1 class="subtitle is-2 align-center">
+      <h1 className="subtitle is-2 align-center">
         High Quality Discord Music Bot
         <hr />
         <HomeHeaderCallToAction />
@@ -105,9 +107,84 @@ class HomeHeaderSubtitle extends Component {
 class HomeHeader extends Component {
   render() {
     return (
-      <div class="column is-12">
+      <div className="column is-12">
         <HomeHeaderTitle />
         <HomeHeaderSubtitle />
+      </div>
+    )
+  }
+}
+
+class HomeFeaturesTile extends Component {
+  render() {
+    const faName = "fa-" + this.props.icon;
+    const iconName = "icon-" + this.props.icon;
+    const classes = classNames("fa", faName, iconName);
+
+    return (
+      <article className="title is-child notification is-dark">
+        <p className="title">
+          <i className={classes} aria-hidden="true"></i>
+          {" " + this.props.name}
+        </p>
+      </article>
+    )
+  }
+}
+
+class HomeFeaturesLeftColumn extends Component {
+  render() {
+    return (
+      <div className="tile is-parent is-vertical">
+        <HomeFeaturesTile name="YouTube" icon="youtube-play" />
+        <HomeFeaturesTile name="SoundCloud" icon="soundcloud" />
+      </div>
+    )
+  }
+}
+
+class HomeFeaturesRightColumn extends Component {
+  render() {
+    return (
+      <div className="tile is-parent is-vertical">
+        <HomeFeaturesTile name="Twitch" icon="twitch" />
+        <HomeFeaturesTile name="Radio Stations" icon="microphone" />
+      </div>
+    )
+  }
+}
+
+class HomeFeaturesBottom extends Component {
+  render() {
+    return (
+      <div className="tile is-parent">
+        <article className="tile is-child notification is-dark">
+          <p className="title">
+            <i className="fa fa-list" aria-hidden="true"></i> Much More
+          </p>
+          <p className="subtitle">
+            DAB Bot is always implementing new sources for music.
+          </p>
+        </article>
+      </div>
+    )
+  }
+}
+
+class HomeFeatures extends Component {
+  render() {
+    return (
+      <div className="column is-12">
+        <h3 className="title is-4">Featuring:</h3>
+        <div className="title is-ancestor">
+          <div className="tile is-vertical is-12">
+            <div className="tile">
+              <HomeFeaturesLeftColumn />
+              <HomeFeaturesRightColumn />
+            </div>
+            <HomeFeaturesBottom />
+          </div>
+        </div>
       </div>
     )
   }
@@ -118,6 +195,7 @@ class Home extends Component {
     return (
       <div className="columns is-multiline">
         <HomeHeader />
+        <HomeFeatures />
       </div>
     )
   }
@@ -138,13 +216,13 @@ class Content extends Component {
 class Footer extends Component {
   render() {
     return (
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
+      <footer className="footer">
+        <div className="container">
+          <div className="content has-text-centered">
             <p>
-              <strong className="footer-em-text">DAB BOT</strong> by <a href="https://github.com/orgs/dabbotorg/people" class="has-text-success">DAB BOT Development Team</a>. The source code is licensed
-              <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" class="has-text-success"> CCPL</a>. The website content
-              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="has-text-success">CC BY NC SA 4.0</a>.
+              <strong className="footer-em-text">DAB Bot</strong> by <a href="https://github.com/orgs/dabbotorg/people" className="has-text-success">DAB Bot Development Team</a>. The source code is licensed
+              <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" className="has-text-success"> CCPL</a>. The website content
+              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" className="has-text-success">CC BY NC SA 4.0</a>.
             </p>
           </div>
         </div>
@@ -158,7 +236,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Home />
+        <Content />
         <Footer />
       </div>
     )
