@@ -1,65 +1,57 @@
-body {
-  padding-top: 20px;
-  background-color: #000;
-  color: darkgray;
-  font-family: "Montserrat", sans-serif;
-}
-
-.alert {
-    padding: 20px;
-    background-color: #555;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+body, html {
+    font-family: 'Roboto', sans-serif;
     color: white;
-    margin-top: 3%;
-    align-self: flex-start;
-    justify-content: center;
-    position: absolute;
+    background-color: #2B2B2B;
 }
 
-.logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.hero.is-dark .tabs.is-boxed li.is-active a,
+.hero.is-dark .tabs.is-boxed li.is-active a:hover,
+.hero.is-dark .tabs.is-toggle li.is-active a,
+.hero.is-dark .tabs.is-toggle li.is-active a:hover {
+    background-color: #2B2B2B;
+    border-color: #2B2B2B;
+    color: white;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+.title {
+    color: white;
 }
 
-.header .image {
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+.subtitle {
+    color: #c3c3c3;
 }
 
-.header .title {
-  font-size: 5em;
-  color: #ddd;
-}
-
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: white;
-}
-
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
-  color: white;
+hr {
+    background-color: #363636;
 }
 
 .footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 40px;
-  border-top: 1px solid #eee;
+    background-color: #363636;
+    color: #b7b7b7;
+    padding: 3rem 1.5rem;
 }
 
-ul.footer-list li {
-  display: inline;
-  margin-right: 10px;
+/* helpers */
+.align-center {
+  text-align: center;
+}
+
+/* header styles */
+.header-text {
+  color: #C2C2C2;
+}
+
+.header-text-large {
+  font-size: 5rem;
+}
+
+.header-image {
+  vertical-align: middle;
+  margin-bottom: 25px;
+}
+
+/* footer styles */
+.footer-em-text {
+  color: white;
 }
