@@ -6,7 +6,7 @@ class HomeHeaderSubtitle extends Component {
       <h1 className="subtitle is-2 align-center">
         High Quality Discord Music Bot
         <hr />
-        <a className="button is-success is-large">
+        <a className="button is-success is-large" href="https://dabbot.org/invite">
           Invite DAB Bot
         </a>
       </h1>
