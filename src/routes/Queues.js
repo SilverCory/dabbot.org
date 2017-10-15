@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
-import Title from '../components/Title'
 
-class Queue extends Component {
+class Queues extends Component {
   render() {
     return (
       <div>
-        <Title pathname={this.props.location.pathname} />
-
         <h2>Song queue</h2>
         <ol>
           <li>NCS My Heart</li>
@@ -17,5 +14,4 @@ class Queue extends Component {
   }
 }
 
-export default Queue
-
+export default Queues
