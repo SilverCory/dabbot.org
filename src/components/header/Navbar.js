@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
-class NavbarInternalItemLink extends Component {
+class InternalItemLink extends Component {
   render() {
     return (
       <li>
@@ -17,7 +17,7 @@ class NavbarInternalItemLink extends Component {
   }
 }
 
-class NavbarExternalItemLink extends Component {
+class ExternalItemLink extends Component {
   render() {
     return (
       <li>
@@ -27,20 +27,20 @@ class NavbarExternalItemLink extends Component {
   }
 }
 
-class NavbarItemLink extends Component {
+class ItemLink extends Component {
   render() {
     if (this.props.external) {
-      return (<NavbarExternalItemLink name={this.props.name} href={this.props.href} />)
+      return (<ExternalItemLink name={this.props.name} href={this.props.href} />)
     } else {
-      return (<NavbarInternalItemLink name={this.props.name} href={this.props.href} />)
+      return (<InternalItemLink name={this.props.name} href={this.props.href} />)
     }
   }
 }
 
-class NavbarItem extends Component {
+class Item extends Component {
   render() {
     return (
-      <NavbarItemLink external={this.props.external} name={this.props.name} href={this.props.href} />
+      <ItemLink external={this.props.external} name={this.props.name} href={this.props.href} />
     )
   }
 }
@@ -52,13 +52,13 @@ class Navbar extends Component {
         <nav className="tabs is-boxed is-fullwidth">
           <div className="container">
             <ul>
-              <NavbarItem name="Home" href="/" />
-              <NavbarItem external name="Invite" href="https://dabbot.org/invite" />
-              <NavbarItem name="Commands" href="/commands" />
-              <NavbarItem name="Radios" href="/radios" />
-              <NavbarItem name="Queues" href="/queues" />
-              <NavbarItem external name="Support" href="https://dabbot.org/support" />
-              <NavbarItem external name="Patreon" href="https://patreon.com/dabbot" />
+              <Item name="Home" href="/" />
+              <Item external name="Invite" href="https://dabbot.org/invite" />
+              <Item name="Commands" href="/commands" />
+              <Item name="Radios" href="/radios" />
+              <Item name="Queues" href="/queues" />
+              <Item external name="Support" href="https://dabbot.org/support" />
+              <Item external name="Patreon" href="https://patreon.com/dabbot" />
             </ul>
           </div>
         </nav>

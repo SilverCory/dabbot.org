@@ -3,7 +3,7 @@ import Title from '../components/Title'
 import Menu from './commands/Menu'
 import View from './commands/View'
 
-/*class CommandsViewIndex extends Component {
+/*class ViewIndex extends Component {
   render() {
     return (
       <div>
