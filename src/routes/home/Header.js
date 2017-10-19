@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class HomeHeaderSubtitle extends Component {
+class HeaderSubtitle extends Component {
   render() {
     return (
       <h1 className="subtitle is-2 align-center">
@@ -14,15 +14,15 @@ class HomeHeaderSubtitle extends Component {
   }
 }
 
-class HomeHeader extends Component {
+class Header extends Component {
   render() {
     return (
       <div className="column is-12">
         <h1 className="title is-2 align-center">DAB Bot</h1>
-        <HomeHeaderSubtitle />
+        <HeaderSubtitle />
       </div>
     )
   }
 }
 
-export default HomeHeader
+export default Header

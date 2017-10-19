@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const classNames = require('classnames');
 
-class HomeFeaturesTile extends Component {
+class FeaturesTile extends Component {
   render() {
     const faName = "fa-" + this.props.icon;
     const iconName = "icon-" + this.props.icon;
@@ -19,29 +19,29 @@ class HomeFeaturesTile extends Component {
   }
 }
 
-class HomeFeaturesLeftColumn extends Component {
+class FeaturesLeftColumn extends Component {
   render() {
     return (
       <div className="tile is-parent is-vertical">
-        <HomeFeaturesTile name="YouTube" icon="youtube-play" />
-        <HomeFeaturesTile name="SoundCloud" icon="soundcloud" />
+        <FeaturesTile name="YouTube" icon="youtube-play" />
+        <FeaturesTile name="SoundCloud" icon="soundcloud" />
       </div>
     )
   }
 }
 
-class HomeFeaturesRightColumn extends Component {
+class FeaturesRightColumn extends Component {
   render() {
     return (
       <div className="tile is-parent is-vertical">
-        <HomeFeaturesTile name="Twitch" icon="twitch" />
-        <HomeFeaturesTile name="Radio Stations" icon="microphone" />
+        <FeaturesTile name="Twitch" icon="twitch" />
+        <FeaturesTile name="Radio Stations" icon="microphone" />
       </div>
     )
   }
 }
 
-class HomeFeaturesBottom extends Component {
+class FeaturesBottom extends Component {
   render() {
     return (
       <div className="tile is-parent">
@@ -58,7 +58,7 @@ class HomeFeaturesBottom extends Component {
   }
 }
 
-class HomeFeatures extends Component {
+class Features extends Component {
   render() {
     return (
       <div className="column is-12">
@@ -66,10 +66,10 @@ class HomeFeatures extends Component {
         <div className="title is-ancestor">
           <div className="tile is-vertical is-12">
             <div className="tile">
-              <HomeFeaturesLeftColumn />
-              <HomeFeaturesRightColumn />
+              <FeaturesLeftColumn />
+              <FeaturesRightColumn />
             </div>
-            <HomeFeaturesBottom />
+            <FeaturesBottom />
           </div>
         </div>
       </div>
@@ -77,4 +77,4 @@ class HomeFeatures extends Component {
   }
 }
 
-export default HomeFeatures
+export default Features

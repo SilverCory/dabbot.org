@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Title from '../components/Title'
-import CommandsMenu from './commands/CommandsMenu'
-import CommandsView from './commands/CommandsView'
+import Menu from './commands/Menu'
+import View from './commands/View'
 
 /*class CommandsViewIndex extends Component {
   render() {
@@ -24,10 +24,10 @@ class Commands extends Component {
 
         <div className="columns">
           <div className="column is-one-quarter">
-            <CommandsMenu />
+            <Menu />
           </div>
           <div className="column">
-            <CommandsView
+            <View
               title="Something"
               description="Here's a nice long description of what the command does"
               usages={[

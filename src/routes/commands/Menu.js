@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class CommandsMenuItem extends Component {
+class MenuItem extends Component {
   render() {
     return (
       <li><a>{this.props.name}</a></li>
@@ -8,7 +8,7 @@ class CommandsMenuItem extends Component {
   }
 }
 
-class CommandsMenu extends Component {
+class Menu extends Component {
   render() {
     return (
       <aside className="menu">
@@ -16,27 +16,27 @@ class CommandsMenu extends Component {
           Some category
         </p>
         <ul className="menu-list">
-          <CommandsMenuItem name="Something" />
-          <CommandsMenuItem name="Else" />
+          <MenuItem name="Something" />
+          <MenuItem name="Else" />
         </ul>
         <p className="menu-label">
           Some category
         </p>
         <ul className="menu-list">
-          <CommandsMenuItem name="Something" />
-          <CommandsMenuItem name="Else" />
-          <CommandsMenuItem name="Something" />
-          <CommandsMenuItem name="Else" />
+          <MenuItem name="Something" />
+          <MenuItem name="Else" />
+          <MenuItem name="Something" />
+          <MenuItem name="Else" />
         </ul>
         <p className="menu-label">
           Some category
         </p>
         <ul className="menu-list">
-          <CommandsMenuItem name="Something" />
+          <MenuItem name="Something" />
         </ul>
       </aside>
     )
   }
 }
 
-export default CommandsMenu
+export default Menu

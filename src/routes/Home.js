@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Title from '../components/Title'
-import HomeHeader from './home/HomeHeader'
-import HomeFeatures from './home/HomeFeatures'
+import Header from './home/Header'
+import Features from './home/Features'
 
 class Home extends Component {
   render() {
@@ -10,8 +10,8 @@ class Home extends Component {
         <Title pathname={this.props.location.pathname} />
 
         <div className="columns is-multiline">
-          <HomeHeader />
-          <HomeFeatures />
+          <Header />
+          <Features />
         </div>
       </div>
     )

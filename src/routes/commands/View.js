@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class CommandsViewTitle extends Component {
+class ViewTitle extends Component {
   render() {
     return (
       <h3 className="title is-5">{this.props.title}</h3>
@@ -8,7 +8,7 @@ class CommandsViewTitle extends Component {
   }
 }
 
-class CommandsViewDescription extends Component {
+class ViewDescription extends Component {
   render() {
     return (
       <p>{this.props.description}</p>
@@ -17,7 +17,7 @@ class CommandsViewDescription extends Component {
 }
 
 
-class CommandsViewUsage extends Component {
+class ViewUsage extends Component {
   render() {
     const usages = this.props.usages.map((usage, index) => {
       return (
@@ -42,7 +42,7 @@ class CommandsViewUsage extends Component {
   }
 }
 
-class CommandsViewExamples extends Component {
+class ViewExamples extends Component {
   render() {
     return (
       <div>
@@ -53,19 +53,19 @@ class CommandsViewExamples extends Component {
   }
 }
 
-class CommandsView extends Component {
+class View extends Component {
   render() {
     return (
       <div>
-        <CommandsViewTitle title={this.props.title} />
-        <CommandsViewDescription description={this.props.description} />
+        <ViewTitle title={this.props.title} />
+        <ViewDescription description={this.props.description} />
         <hr />
-        <CommandsViewUsage command="something" usages={this.props.usages} />
+        <ViewUsage command="something" usages={this.props.usages} />
         <br />
-        <CommandsViewExamples examples={this.props.examples} />
+        <ViewExamples examples={this.props.examples} />
       </div>
     )
   }
 }
 
-export default CommandsView
+export default View
