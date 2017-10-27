@@ -1,11 +1,40 @@
 import React, { Component } from 'react'
 
-class Title extends Component {
+class Usage extends Component {
   render() {
     return (
-      <h3 className="title is-5">
+      <div className="column is-half-tablet is-one-third-fullhd">
+        <p>{this.props.title}</p>
+        <p>
+          {this.props.children}
+        </p>
+        <br />
+      </div>
+    )
+  }
+}
+
+class UsageList extends Component {
+  render() {
+    return (
+      <div className="commands-view">
+        <h4 className="title is-6">Usage</h4>
+        <div className="columns is-multiline">
+          {this.props.children}
+        </div>
+        <br />
+      </div>
+    )
+  }
+}
+
+class ExampleList extends Component {
+  render() {
+    return (
+      <div className="commands-view">
+        <h4 className="title is-6">Examples</h4>
         {this.props.children}
-      </h3>
+      </div>
     )
   }
 }
@@ -14,64 +43,61 @@ class Description extends Component {
   render() {
     return (
       <div className="commands-view">
-        <p>{this.props.description}</p>
+        {this.props.children}
       </div>
     )
   }
 }
 
-
-class Usage extends Component {
-  render() {
-    const usages = this.props.usages.map((usage, index) => {
-      return (
-        <div className="commands-view" key={index}>
-          <p>{usage.title}</p>
-          <p>
-            <code>
-              !!!{this.props.command} {usage.usage}
-            </code>
-          </p>
-          <br />
-        </div>
-      )
-    })
-
-    return (
-      <div>
-        <h4 className="title is-6">Usage</h4>
-        <div>
-          {usages}
-        </div>
-      </div>
-    )
-  }
-}
-
-class Examples extends Component {
-  render() {
-    return (
-      <div className="commands-view">
-        <h4 className="title is-6">Examples</h4>
-        {this.props.examples}
-      </div>
-    )
-  }
-}
-
-class View extends Component {
+class Header extends Component {
   render() {
     return (
       <div>
-        <Title>{this.props.title}</Title>
-        <Description description={this.props.description} />
+        <h3 className="title is-5">
+          {this.props.command}
+        </h3>
+        <p>{this.props.children}</p>
         <hr />
-        <Usage command="something" usages={this.props.usages} />
-        <br />
-        <Examples examples={this.props.examples} />
       </div>
     )
   }
 }
 
-export default View
+class Command extends Component {
+  render() {
+    return (
+      <div className="command-view">
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+class SomethingView extends Component {
+  render() {
+    return (
+      <Command>
+        <Header command="Something">
+          <Description>Here's a nice long description of what the command does</Description>
+        </Header>
+        <UsageList>
+          <Usage title="Finding a minecraft character">
+            <code>{"!!!something <character name> [blocks]"}</code>
+          </Usage>
+          <Usage title="Finding a minecraft character">
+            <code>{"!!!something <character name> <limit> <dabs>"}</code>
+          </Usage>
+        </UsageList>
+        <ExampleList>
+          <p>Dab!</p>
+          <p>Dab!</p>
+          <p>Dab!</p>
+          <p>Dab!</p>
+          <p>Dab!</p>
+        </ExampleList>
+      </Command>
+    )
+  }
+}
+
+export default SomethingView
