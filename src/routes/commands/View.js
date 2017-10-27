@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class ViewTitle extends Component {
+class Title extends Component {
   render() {
     return (
       <h3 className="title is-5">{this.props.title}</h3>
@@ -8,7 +8,7 @@ class ViewTitle extends Component {
   }
 }
 
-class ViewDescription extends Component {
+class Description extends Component {
   render() {
     return (
       <div className="commands-view">
@@ -19,7 +19,7 @@ class ViewDescription extends Component {
 }
 
 
-class ViewUsage extends Component {
+class Usage extends Component {
   render() {
     const usages = this.props.usages.map((usage, index) => {
       return (
@@ -46,7 +46,7 @@ class ViewUsage extends Component {
   }
 }
 
-class ViewExamples extends Component {
+class Examples extends Component {
   render() {
     return (
       <div className="commands-view">
@@ -61,12 +61,12 @@ class View extends Component {
   render() {
     return (
       <div>
-        <ViewTitle title={this.props.title} />
-        <ViewDescription description={this.props.description} />
+        <Title title={this.props.title} />
+        <Description description={this.props.description} />
         <hr />
-        <ViewUsage command="something" usages={this.props.usages} />
+        <Usage command="something" usages={this.props.usages} />
         <br />
-        <ViewExamples examples={this.props.examples} />
+        <Examples examples={this.props.examples} />
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class HeaderSubtitle extends Component {
+class Subtitle extends Component {
   render() {
     return (
       <h1 className="subtitle is-2 align-center">
@@ -19,7 +19,7 @@ class Header extends Component {
     return (
       <div className="column is-12">
         <h1 className="title is-2 align-center">DAB Bot</h1>
-        <HeaderSubtitle />
+        <Subtitle />
       </div>
     )
   }

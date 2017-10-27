@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const classNames = require('classnames');
 
-class FeaturesTile extends Component {
+class Tile extends Component {
   render() {
     const faName = "fa-" + this.props.icon;
     const iconName = "icon-" + this.props.icon;
@@ -19,29 +19,29 @@ class FeaturesTile extends Component {
   }
 }
 
-class FeaturesLeftColumn extends Component {
+class LeftColumn extends Component {
   render() {
     return (
       <div className="tile is-parent is-vertical">
-        <FeaturesTile name="YouTube" icon="youtube-play" />
-        <FeaturesTile name="SoundCloud" icon="soundcloud" />
+        <Tile name="YouTube" icon="youtube-play" />
+        <Tile name="SoundCloud" icon="soundcloud" />
       </div>
     )
   }
 }
 
-class FeaturesRightColumn extends Component {
+class RightColumn extends Component {
   render() {
     return (
       <div className="tile is-parent is-vertical">
-        <FeaturesTile name="Twitch" icon="twitch" />
-        <FeaturesTile name="Radio Stations" icon="microphone" />
+        <Tile name="Twitch" icon="twitch" />
+        <Tile name="Radio Stations" icon="microphone" />
       </div>
     )
   }
 }
 
-class FeaturesBottom extends Component {
+class Bottom extends Component {
   render() {
     return (
       <div className="tile is-parent">
@@ -66,10 +66,10 @@ class Features extends Component {
         <div className="title is-ancestor">
           <div className="tile is-vertical is-12">
             <div className="tile">
-              <FeaturesLeftColumn />
-              <FeaturesRightColumn />
+              <LeftColumn />
+              <RightColumn />
             </div>
-            <FeaturesBottom />
+            <Bottom />
           </div>
         </div>
       </div>
