@@ -10,7 +10,6 @@ import Radios from './routes/Radios'
 import Queues from './routes/Queues'
 
 import './App.css'
-import 'bulma'
 
 class App extends Component {
   render() {
