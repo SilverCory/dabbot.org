@@ -64,3 +64,27 @@ hr {
 .icon-twitch {
   color: #6441A4;
 }
+
+/* commands page */
+.menu-list a {
+  color: #b7b7b7;
+}
+
+.menu-list a:hover {
+  background-color: #363636;
+  color: #f5f5f5;
+}
+
+.menu-label {
+  color: #ffffff;
+}
+
+.commands-view code {
+  background-color: #424242;
+  border-radius: 3px;
+  color: #ffffff;
+}
+
+.commands-view p {
+  color: #b9b9b9;
+}

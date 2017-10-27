@@ -11,7 +11,9 @@ class ViewTitle extends Component {
 class ViewDescription extends Component {
   render() {
     return (
-      <p>{this.props.description}</p>
+      <div className="commands-view">
+        <p>{this.props.description}</p>
+      </div>
     )
   }
 }
@@ -21,10 +23,12 @@ class ViewUsage extends Component {
   render() {
     const usages = this.props.usages.map((usage, index) => {
       return (
-        <div key={index}>
+        <div className="commands-view" key={index}>
           <p>{usage.title}</p>
-          <p style={{ fontFamily: "monospace" }}>
-            !!!{this.props.command} {usage.usage}
+          <p>
+            <code>
+              !!!{this.props.command} {usage.usage}
+            </code>
           </p>
           <br />
         </div>
@@ -45,7 +49,7 @@ class ViewUsage extends Component {
 class ViewExamples extends Component {
   render() {
     return (
-      <div>
+      <div className="commands-view">
         <h4 className="title is-6">Examples</h4>
         {this.props.examples}
       </div>
