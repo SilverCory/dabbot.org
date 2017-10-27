@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Menu extends Component {
+class Item extends Component {
   render() {
     return (
       <li><a>{this.props.name}</a></li>
@@ -16,23 +16,23 @@ class Menu extends Component {
           Some category
         </p>
         <ul className="menu-list">
-          <Menu name="Something" />
-          <Menu name="Else" />
+          <Item name="Something" />
+          <Item name="Else" />
         </ul>
         <p className="menu-label">
           Some category
         </p>
         <ul className="menu-list">
-          <Menu name="Something" />
-          <Menu name="Else" />
-          <Menu name="Something" />
-          <Menu name="Else" />
+          <Item name="Something" />
+          <Item name="Else" />
+          <Item name="Something" />
+          <Item name="Else" />
         </ul>
         <p className="menu-label">
           Some category
         </p>
         <ul className="menu-list">
-          <Menu name="Something" />
+          <Item name="Something" />
         </ul>
       </aside>
     )

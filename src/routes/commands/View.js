@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 class Title extends Component {
   render() {
     return (
-      <h3 className="title is-5">{this.props.title}</h3>
+      <h3 className="title is-5">
+        {this.props.children}
+      </h3>
     )
   }
 }
@@ -61,7 +63,7 @@ class View extends Component {
   render() {
     return (
       <div>
-        <Title title={this.props.title} />
+        <Title>{this.props.title}</Title>
         <Description description={this.props.description} />
         <hr />
         <Usage command="something" usages={this.props.usages} />
