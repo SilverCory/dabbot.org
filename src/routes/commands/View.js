@@ -22,7 +22,6 @@ class UsageList extends Component {
         <div className="columns is-multiline">
           {this.props.children}
         </div>
-        <br />
       </div>
     )
   }
