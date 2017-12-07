@@ -1,15 +1,30 @@
 import React, { Component } from 'react'
 
+class Item extends Component {
+  render() {
+    return (
+      <p style={{ display: "inline-block", padding: "0 1rem 0 1rem", fontSize: "2rem" }}>
+        <a href={this.props.href} style={{ color: "#f5f5f5" }} >
+          <span className="icon">
+            <i className={"fa " + this.props.icon}></i>
+          </span>
+        </a>
+      </p>
+    )
+  }
+}
+
 class Footer extends Component {
   render() {
     return (
       <footer className="footer">
         <div className="container">
           <div className="content has-text-centered">
-            <p>
-              <strong className="footer-em-text">DAB Bot</strong> by <a href="https://github.com/orgs/dabbotorg/people" className="has-text-success">DAB Bot Development Team</a>.
-              This website&apos;s content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" className="has-text-success">CC BY NC SA 4.0</a>.
-            </p>
+            <div>
+              <Item href="https://github.com/dabbotorg" icon="fa-github" />
+              <Item href="https://twitter.com/dabbbot" icon="fa-twitter" />
+            </div>
+            <p>Copyright &copy; 2017 dabbot.org | Please help to keep this project alive on <a href="/upgrades">Patreon</a>.</p>
           </div>
         </div>
       </footer>

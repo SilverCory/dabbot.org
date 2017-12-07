@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Usage extends Component {
+export class Usage extends Component {
   render() {
     return (
       <div className="column is-half-tablet is-one-third-fullhd">
@@ -14,7 +14,7 @@ class Usage extends Component {
   }
 }
 
-class UsageList extends Component {
+export class UsageList extends Component {
   render() {
     return (
       <div className="commands-view">
@@ -27,7 +27,7 @@ class UsageList extends Component {
   }
 }
 
-class ExampleList extends Component {
+export class ExampleList extends Component {
   render() {
     return (
       <div className="commands-view">
@@ -38,7 +38,7 @@ class ExampleList extends Component {
   }
 }
 
-class Description extends Component {
+export class Description extends Component {
   render() {
     return (
       <div className="commands-view">
@@ -48,7 +48,7 @@ class Description extends Component {
   }
 }
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     return (
       <div>
@@ -62,7 +62,7 @@ class Header extends Component {
   }
 }
 
-class Command extends Component {
+export class Command extends Component {
   render() {
     return (
       <div className="command-view">
@@ -71,32 +71,3 @@ class Command extends Component {
     )
   }
 }
-
-class SomethingView extends Component {
-  render() {
-    return (
-      <Command>
-        <Header command="Something">
-          <Description>Here's a nice long description of what the command does</Description>
-        </Header>
-        <UsageList>
-          <Usage title="Finding a minecraft character">
-            <code>{"!!!something <character name> [blocks]"}</code>
-          </Usage>
-          <Usage title="Finding a minecraft character">
-            <code>{"!!!something <character name> <limit> <dabs>"}</code>
-          </Usage>
-        </UsageList>
-        <ExampleList>
-          <p>Dab!</p>
-          <p>Dab!</p>
-          <p>Dab!</p>
-          <p>Dab!</p>
-          <p>Dab!</p>
-        </ExampleList>
-      </Command>
-    )
-  }
-}
-
-export default SomethingView

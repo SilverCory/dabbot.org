@@ -5,11 +5,7 @@ class InternalItemLink extends Component {
   render() {
     return (
       <li>
-        <NavLink to={this.props.href} exact activeStyle={{
-          backgroundColor: '#2B2B2B',
-          borderColor: '#2B2B2B',
-          color: 'white',
-        }} >
+        <NavLink to={this.props.href} exact={!this.props.exact} activeStyle={{ backgroundColor: '#2B2B2B', borderColor: '#2B2B2B', color: 'white' }} >
           {this.props.name}
         </NavLink>
       </li>
@@ -52,11 +48,11 @@ class Navbar extends Component {
         <nav className="tabs is-boxed is-fullwidth">
           <div className="container">
             <ul>
-              <Item name="Home" href="/" />
-              <Item external name="Invite" href="https://dabbot.org/invite" />
+              <Item name="Home" href="/" exact />
               <Item name="Commands" href="/commands" />
-              <Item name="Radios" href="/radios" />
-              <Item name="Queues" href="/queues" />
+              {/*<Item name="Radios" href="/radios" />*/}
+              {/*<Item name="Upgrades" href="/upgrades" />*/}
+              <Item external name="Invite" href="https://dabbot.org/invite" />
               <Item external name="Support" href="https://dabbot.org/support" />
               <Item external name="Patreon" href="https://patreon.com/dabbot" />
             </ul>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import Title from '../components/Title'
 import Menu from './commands/Menu'
-import SomethingView from './commands/View'
+import GettingStartedView from './commands/views/GettingStarted'
+import AboutView from './commands/views/About'
 
 class Commands extends Component {
   render() {
@@ -14,7 +16,8 @@ class Commands extends Component {
             <Menu />
           </div>
           <div className="column">
-            <SomethingView />
+            <Route path="/commands" exact component={GettingStartedView} />
+            <Route path="/commands/about" component={AboutView} />
           </div>
         </div>
       </div>

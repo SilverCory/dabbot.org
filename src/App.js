@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 import Home from './routes/Home'
 import Commands from './routes/Commands'
 import Radios from './routes/Radios'
-import Queues from './routes/Queues'
+import Upgrades from './routes/Upgrades'
 
 import './App.css'
 
@@ -23,7 +23,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/commands" component={Commands} />
                 <Route path="/radios" component={Radios} />
-                <Route path="/queues" component={Queues} />
+                <Route path="/upgrades" component={Upgrades} />
               </div>
             </section>
             <Footer />

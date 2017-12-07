@@ -7,11 +7,7 @@ class Radios extends Component {
       <div>
         <Title pathname={this.props.location.pathname} />
 
-        <h2>Radio Stations:</h2>
-        <ol>
-          <li>Minecraft Radio</li>
-          <li>Christmas FM</li>
-        </ol>
+        <h2>Radio station browser coming soon...</h2>
       </div>
     )
   }
