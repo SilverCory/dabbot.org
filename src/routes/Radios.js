@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
-import Title from '../components/Title'
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import Title from '../components/Title';
+import Browser from './radios/Browser';
 
 class Radios extends Component {
   render() {
     return (
       <div>
         <Title pathname={this.props.location.pathname} />
-
-        <h2>Radio station browser coming soon...</h2>
+        <div>
+          <Route pathname="/radios" exact component={Browser} />
+        </div>
       </div>
     )
   }
