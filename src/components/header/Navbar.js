@@ -5,7 +5,7 @@ class InternalItemLink extends Component {
   render() {
     return (
       <li>
-        <NavLink to={this.props.href} exact={!this.props.exact} activeStyle={{ backgroundColor: '#2B2B2B', borderColor: '#2B2B2B', color: 'white' }} >
+        <NavLink to={this.props.href} exact={this.props.exact} activeStyle={{ backgroundColor: '#2B2B2B', borderColor: '#2B2B2B', color: 'white' }} >
           {this.props.name}
         </NavLink>
       </li>
@@ -28,7 +28,7 @@ class ItemLink extends Component {
     if (this.props.external) {
       return (<ExternalItemLink name={this.props.name} href={this.props.href} />)
     } else {
-      return (<InternalItemLink name={this.props.name} href={this.props.href} />)
+      return (<InternalItemLink exact={this.props.exact} name={this.props.name} href={this.props.href} />)
     }
   }
 }
@@ -36,7 +36,7 @@ class ItemLink extends Component {
 class Item extends Component {
   render() {
     return (
-      <ItemLink external={this.props.external} name={this.props.name} href={this.props.href} />
+      <ItemLink external={this.props.external} exact={this.props.exact} name={this.props.name} href={this.props.href} />
     )
   }
 }
