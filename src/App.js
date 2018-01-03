@@ -1,37 +1,28 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import 'babel-polyfill';
 
-import Header from './components/Header'
-import Footer from './components/Footer'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
-import Home from './routes/Home'
-import Commands from './routes/Commands'
-import Radios from './routes/Radios'
-import Upgrades from './routes/Upgrades'
+import store, { history } from './store';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
 
-import './App.css'
+import Application from './views/Application';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Router>
-          <div>
-            <Header />
-            <section className="section">
-              <div className="container">
-                <Route exact path="/" component={Home} />
-                <Route path="/commands" component={Commands} />
-                <Route path="/radios" component={Radios} />
-                <Route path="/upgrades" component={Upgrades} />
-              </div>
-            </section>
-            <Footer />
-          </div>
-        </Router>
-      </div>
+function render() {
+    ReactDOM.render(
+        <AppContainer>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <Application />
+                </ConnectedRouter>
+            </Provider>
+        </AppContainer>
     )
-  }
 }
 
-export default App
+render();
+if (module.hot) {
+	module.hot.accept('./views/Application.js', render);
+}
