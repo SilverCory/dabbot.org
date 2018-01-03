@@ -8,21 +8,25 @@ import store, { history } from './store';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 
-import Application from './views/Application';
+import LocaleWrapper from './LocaleWrapper.js';
+import Application from './pages/Application';
 
 function render() {
-    ReactDOM.render(
-        <AppContainer>
-            <Provider store={store}>
-                <ConnectedRouter history={history}>
-                    <Application />
-                </ConnectedRouter>
-            </Provider>
-        </AppContainer>
-    )
+	ReactDOM.render(
+		<AppContainer>
+			<Provider store={store}>
+				<LocaleWrapper>
+					<ConnectedRouter history={history}>
+						<Application />
+					</ConnectedRouter>
+				</LocaleWrapper>
+			</Provider>
+		</AppContainer>,
+		document.getElementById('app')
+	);
 }
 
 render();
 if (module.hot) {
-	module.hot.accept('./views/Application.js', render);
+	module.hot.accept('./pages/Application.js', render);
 }

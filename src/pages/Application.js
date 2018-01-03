@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+
+import 'normalize.css/normalize.css';
+import '../styling/main.scss';
 
 export default class Application extends Component {
 	render() {
